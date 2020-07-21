@@ -1,6 +1,13 @@
-# Digital ecosystem
+# e-Money
 
-Um ecossistema digital formado por membros que podem ser pessoas representadas e acessando o mesmo através de sua identidade digital, até diversos serviços e softwares terceiros que para confiáveis cumprem o contrato e seguem o protocolo exigido por um gateway, que conecta todos membros e aplica as regras do ecossistema e assegura a interação e cooperação entre ele através de sua mediação.
+Um valor monetário representado através de créditos eletrônicos que tem finalidade servir de moeda apenas dentro de sua plataforma, onde é movimentado e utilizado para realização de pagamentos que deseje usufruir dentro da plataforma e-money.
+
+A plataforma utiliza e-money em sua base ser um sistema de pagamentos em comum de serviços, produtos e etc de entidades que pertencem e participam da plataforma, sendo os usuários da plataforma consumindo os de dentro serviços da plataforma.
+
+Ex: Pagar a passagem de ônibus.
+
+Para estar disponível na plataforma, é preciso se integrar ao hub.
+
 
 ---
 
@@ -13,41 +20,32 @@ O trabalho tem como essencia resolver um problema mesmo que ficticio utilizando 
 ### Agradecimentos
 Agradecimentos e referência ao orientador e mentor do trabalho [Gilvani Alves](https://www.linkedin.com/in/gilvani-alves-32754342/), especialista em redes de computadores e teleprocessamento e mestre em engenharia elétrica.
 
+### Observação
+Por hora o projeto só vai contar com o desenvolvimento e entrega do backend, ficando aberto a possibilidade das demais partes como clientes mobile e web.
+
+Quem tiver vontade e disposição de participar contribuindo com evolução do projeto para outros horizontes, seja na parte de frontend e outras demais possibilidades aqui não observadas, mesmo o projeto sendo sem a finalidade de venda e lucro, o aprendizado e experiência é objetivo.
+
+Estou a disposição.
+
 ---
 
 ## Contexto e problema
-O grupo <img alt="GOV" src="VOG.svg"> trabalha em função de diversos setores como bancário, saúde, serviços públicos e vários outros, formado por várias organizações separadas e independentes, sendo cada uma responsável por um setor, onde cada uma tem sua própria área de tecnologia, desenvolvimento e inovação, onde desenvolve, mantém, evolui, operacionaliza e prove sua correspondente solução para seu setor a fim de  realizar inovações e transformações digitais, gerando mais valor através de seus serviços.
+O governo da Techlandia está com um projeto de sociedade digital em andamento, onde uma das partes desse projeto é a utilização de créditos eletrônicos como pagamento de serviços ofertados para a população. 
 
-Apesar dos resultados alcançados por cada setor individualmente, existem limites a serem superados, passando a pensar como um todo, tendo a necessidade de conectar as soluções mesmo não fazendo parte da mesma infraestrutura, mas não somente com as que fazem parte do grupo <img alt="GOV" src="VOG.svg">, também de terceiros considerados confiáveis, objetivando gerar mais valor aos usuários que são em comum entre a maioria das soluções, com a cooperação das soluções a fim de compartilhar dados e suas operações, aperfeiçoando e criando novos resultados.
+O governo é o ofertante desses serviços para a população, quem administra e controla os serviços ofertados, precisa estar no controle e gerenciamento da utilização desses créditos como um banco e os devidos repasses e negociações com os devidos serviços ofertados através desses créditos como uma adquirente. 
 
-Tendo como os principais problemas:
+É preciso que o governo seja o ponto central em comum entre a população que irá adquirir créditos e consumir, e as entidades prestadoras desses serviços através do governo, que recebem e precisam se manter para isso, tendo em mente que as entidades e serviços que são ofertados são dinâmicos, podendo mudar conforme a necessidade. 
 
-- Dos usuários:
-    - Utilizam em comum praticamente as mesmas soluções.
-    - Dados, definições e operações ficam repetidos entre as soluções utilizadas em comum.
-    - Falta de um canal focal referente ao usuário nas demais soluções usadas.
-- Das múltiplas soluções de diferentes setores, infraestruturas, posse e de até terceiros: 
-    - Tem em comum praticamente os mesmos usuários.
-    - Compartilham dados parecidos.
-    - Necessitam interoperar para desburocratização e aumento da eficiência dos processos e criação de novos.
-    - Restrição de continuarem separadas e sendo servidas como soluções separadas.
-    - Dinamicidade da entrada e saída de novas soluções.
+Ficou a responsabilidade da ShinerayLab projetar e desenvolver uma solução isso.
 
-
-Junto com esse contexto vem diversos desafios a serem lidados:
-
-  - Conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD).
-  - Gerenciar e aplicar controles em comum e individual a todas soluções, mesmo não estando na mesma infraestrutura ou posse e até mesmo terceiros.
-  - Garantir a segurança entre todos que estão conectados.
-  - Observar, rastrear, integridade e confiabilidade dentro das interações.
-  - Restringir apenas a membros, que para isso se tornaram confiáveis.
-  - Padronizar para conformidade e cooperação dos membros.
-  - Lidar com a dinamicidade da disponibilidade dos serviços.
-  - E outras
+### Features
+Descrever as features requisitadas...
 
 ---
 
 ## Proposta de solução
+Plataforma e-money
+
 A solução proposta é o que eu chamo de um ecossistema digital do grupo <img alt="GOV" src="VOG.svg">, abrangendo todos seus usuários, devidas organizações do grupo e suas soluções até terceiros.
 
 Sendo esse ecossistema uma representação digital do grupo, onde todas soluções e terceiros estariam conectados através de um ponto centralizador e os usuários passariam ter uma identidade digital única compartilhada entre todos dentro desse ecossistema como um todo.
@@ -97,17 +95,6 @@ Mesmo que a solução X venha gerar algum dado ou informação relacionada ao us
 
 Caso o usuário precise utilizar alguma outra solução, como ele já tem sua identidade dentro do ecossistema, apenas precisaria fazer as devidas configurações e avaliações das permissões e termos, além de que se as soluções precisarem interagirem para realizar uma ação, como compartilhar informações, estaria totalmente sobre o controle do usuário sobre o uso de seus dados através da sua identidade dentro do ecossistema.
 
-
-### Observações complementares
-
-#### Service mesh
-Muitos poderiam questionar o porquê não utilizar uma abordagem com service mesh no lugar de um api gateway, pois o cenário envolve uma quantidade dinâmica de serviços independente da sua granularidade, a minha resposta é baseada no pouco que sei sobre service mesh no momento em que aqui escrevo, onde ele é para casos onde todos serviços são primários e de nosso controle, estando em um rede de infraestrutura nossa, formando a malha a partir disso, diferente do contexto do problema abordado, onde mesmo que pertencendo ao mesmo grupo, os serviços um para os outros são terceiros e externos, sendo de controle e posse de outros.
-
-Mas como o api gateway estará na ponta e externo a todos membros, nada impediria que um dos membros utilizasse um service mesh internamente em sua arquitetura, pois um pode complementar o outro, pois resolvem problemas diferentes.
-
-#### Implementação
-A solução proposta pode ser suficiente para o início, podendo posteriormente ter novos requisitos e necessidades, ficando mais complexa, necessitando customizar ou até mesmo desenvolver uma solução própria de api gateway, mas isso é uma suposição caso o projeto deixasse de ser apenas um laboratório.
-
 ---
 
 ## Validação
@@ -118,21 +105,16 @@ A partir do escopo do trabalho a solução será uma prova de conceito, tendo co
 Para estratégia de validação, o ecossistema será montado, tendo o desenvolvimento dos quatro serviços que representaram as soluções e compor tudo com o api gateway, implantando o ecossistema em uma infraestrutura simulando o ambiente e contexto proposto neste trabalho e como seria na vida real, validando a solução nesse ambiente, verificando resolução dos problemas propostos anteriormente.
 
 
-### Index de todos serviços
-- [Digital identity](https://github.com/gmarcial)
-- [Bank](https://github.com/gmarcial)
-- [Health](https://github.com/gmarcial)
-- [Public services](https://github.com/gmarcial)
-
 ---
 
-## Inspiração
-Estonia e sua sociedade digital com todo ecossitema da [e-estonia](https://e-estonia.com/).
+## Inspirações e referencias
+- Estonia e sua sociedade digital com todo ecossitema da [e-estonia](https://e-estonia.com/).
+- A solução [e-bank](https://e-estonia.com/solutions/business-and-finance/e-banking) e um dos seus meios de pegamentos o [e-money](https://www.eestipank.ee/en/payments/means-payments).
 
 ---
 
 ## Evolução contínua
 
-Estou aberto a feedback, discussões, trocar uma ideia, compartilhar, contribuições e tudo aquilo que venha agregar e contribuir para a evolução continua, abra uma [issue](https://github.com/gmarcial/digital-ecosystem/issues/new), ficarei feliz em ter a oportunidade de aprender mais.
+Estou aberto a feedback, discussões, trocar uma ideia, compartilhar, contribuições e tudo aquilo que venha agregar e contribuir para a evolução continua, abra uma [issue](https://github.com/gmarcial/e-money/issues/new), ficarei feliz em ter a oportunidade de aprender mais.
 
 Obrigado.
