@@ -51,7 +51,7 @@ Ficou a responsabilidade da ShinerayLab projetar e desenvolver uma solução iss
 - Transferencia de credito entre contas da plataforma.
 - Vinculação de novos serviços a plataforma.
 - Autorização do uso de serviços dentro da plataforma.
-- Contabilização 
+- Contabilização do repasse para as entidades prestadoras de serviço.
 
 ---
 
