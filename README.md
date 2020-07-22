@@ -34,66 +34,39 @@ O governo da Techlandia está com um projeto de sociedade digital em andamento, 
 
 O governo é o ofertante desses serviços para a população, quem administra e controla os serviços ofertados, precisa estar no controle e gerenciamento da utilização desses créditos como um banco e os devidos repasses e negociações com os devidos serviços ofertados através desses créditos como uma adquirente. 
 
-É preciso que o governo seja o ponto central em comum entre a população que irá adquirir créditos e consumir, e as entidades prestadoras desses serviços através do governo, que recebem e precisam se manter para isso, tendo em mente que as entidades e serviços que são ofertados são dinâmicos, podendo mudar conforme a necessidade. 
+É preciso que o governo seja o ponto central em comum entre a população que irá adquirir créditos e consumir, e as entidades prestadoras desses serviços através do governo, que recebem e precisam se manter para isso, tendo em mente que as entidades e serviços que são ofertados são dinâmicos, podendo mudar conforme a necessidade.
+
+Mesmo com o adiamento da LGDP, é uma restrição começar a aplicar medidas para estar no caminho da conformidade com a lei, principalmente por envolver diretamente dados pessoais.
 
 Ficou a responsabilidade da ShinerayLab projetar e desenvolver uma solução isso.
 
 ### Features
-Descrever as features requisitadas...
+- Abertura de conta.
+- Login.
+- Gerenciamento dos seus dados.
+- Recarga de créditos e-money.
+- Extrato das transações realizadas na conta.
+- Comprovante das transações realizadas.
+- Pagamento de serviços dentro da plataforma.
+- Transferencia de credito entre contas da plataforma.
+- Vinculação de novos serviços a plataforma.
+- Autorização do uso de serviços dentro da plataforma.
+- Contabilização 
 
 ---
 
 ## Proposta de solução
-Plataforma e-money
+A solução é a plataforma e-money, consistindo da criação de uma moeda em comum para pagamento dos serviços, um hub para as entidades acordadas com o governo para oferecer serviços dentro da plataforma que sua forma de pagamento são os créditos eletrônicos e-money. 
 
-A solução proposta é o que eu chamo de um ecossistema digital do grupo <img alt="GOV" src="VOG.svg">, abrangendo todos seus usuários, devidas organizações do grupo e suas soluções até terceiros.
+O governo irá administrar os serviços disponíveis, onde são ofertados para a população através da e-money, repassando como pagamento dos serviços prestados para as entidades parceiras conforme acordado dos lucros dentro da plataforma com as compras dos créditos. 
 
-Sendo esse ecossistema uma representação digital do grupo, onde todas soluções e terceiros estariam conectados através de um ponto centralizador e os usuários passariam ter uma identidade digital única compartilhada entre todos dentro desse ecossistema como um todo.
+Do outro a população realiza a abertura de sua conta na plataforma através de seu cpf e demais dados, comprando créditos do "governo" e podendo usufruir de qualquer serviço disponível da qual ela tenha autorizado, pois é uma moeda em comum que todos serviços aceitam, debitando direto de seu saldo. 
 
-<img alt="big picture" src="digital-ecosystem.png">
+A conta da e-money pode ser encerrada a qualquer momento e tem características muito parecidas de uma conta bancária comum, porém sendo restrita a plataforma e não sendo dinheiro de verdade. 
 
-### Api gateway
+Os dados e informações serão tratadas, armazenadas e manipuladas buscaram estar de acordo com a LGPD.
 
-Um api gateway que realizará o papel de ponte na interoperação entre os membros, sendo estes serviços confiáveis que para isso seguem o protocolo definido através da padronização do gateway, além de ser o único autorizado a interagir com as demais soluções.
-
-Com o api gateway conseguimos centralizar, aplicar e atuar na interação entre os serviços, pois tudo que envolver o ecossistema terá que passar pelo gateway, aplicando as regras necessárias toda vez, seja elas em comum ou específica a uma interação, existindo uma pessoa ou equipe em comum a todos responsável pelo gerenciamento e administração do gateway.
-
-Isso é possível, pois o api gateway tem como features:
-  
-  - Somente o gateway
-  - Controle da interoperação, declarando o que cada serviço pode fazer a partir do gateway.
-  - Segurança com autenticação e autorização dos serviços, restringir ips, validar a requisição, comunicação segura com tls e mutual tls.
-  - Observabilidade e rastreamento das interações através de logging, monitoramento, correlacionamento e mais.
-  - Descoberta de serviços com consul.
-  - E muito mais das features essenciais e comuns a serem aplicadas em todo ecossistema, além de ser extensível por plugins, veja aqui em [features](https://github.com/Kong/kong#features).
-
-
-Sendo nossa solução de api gateway escolhida o [Kong](https://github.com/Kong/kong), um api gateway open-source, cloud-native, extensível através de plugins, baseado no web server nginx e amplamente utilizado em startups, empresas globais e instituições governamentais.
-
-Primeiramente para ser a solução do projeto, era necessário resolver os problemas base listados anteriormente, depois ser uma solução open-source, bem documentada, já madura, pronta para uso e sendo utilizada por várias outros players, uma forte equipe por trás e que ainda fosse moderna e continuamente evoluindo, não somente mantida.
-
-Várias outras soluções foram avaliadas como um forte concorrente a escolha foi o [KrakenD](https://github.com/devopsfaith/krakend-ce), mas é stateless, não sendo o caso desse problema.
-
-### Identidade digital
-
-Para solucionar as dos usuários, teríamos um novo serviço, que será responsável pela identidade e onde os usuários vão gerenciar e controlar suas informações dentro do ecossistema.
-
-Os usuários passariam a ter uma única identificação que o representaria para tudo dentro do limite desse ecossistema, mantendo assim uma conta para o ecossistema, não para cada solução, onde tudo estaria relacionado a essa identidade.
-
-Além disso as informações referentes aos usuários estariam centralizadas em um único lugar, gerenciadas e controladas pelos seus próprios dono, determinando a finalidades dos mesmos, atualizando e etc.
-
-As informações fruto da interação com outras soluções, tambem estariam centralizadas em unico ponto que seria da devia solução, porem gerenciada e controlada pelo seu dono, determinando a finalidades dos mesmos, atualizando e etc.
-
-Assim os usuários terão uma identidade digital dentro desse ecossistema, onde o papel dela é representar o usuário no ecossistema como um todo, dando o devido controle e visibilidade dentro do ecossistema.
-
-### Exemplo da solução
-Um usuário deseja utilizar a solução X, para isso o mesmo cria sua identidade dentro do ecossistema, gerencia suas informações e aceita os termos necessários referente a solução que quer acessar em um único lugar.
-
-Com a identidade criada dentro do ecossistema o usuário consegue acessar a solução X e a partir de sua identidade e devidas configurações do usuário, consegue realizar suas ações que podem envolver ou não autorização do usuário ou consumo de alguma informação do mesmo.
-
-Mesmo que a solução X venha gerar algum dado ou informação relacionada ao usuário, ela se manteria apenas no porte do mesmo, mas sobre controle de seu dono que seria o usuário, gerenciando através sua identidade. 
-
-Caso o usuário precise utilizar alguma outra solução, como ele já tem sua identidade dentro do ecossistema, apenas precisaria fazer as devidas configurações e avaliações das permissões e termos, além de que se as soluções precisarem interagirem para realizar uma ação, como compartilhar informações, estaria totalmente sobre o controle do usuário sobre o uso de seus dados através da sua identidade dentro do ecossistema.
+<C4 lvl1>
 
 ---
 
@@ -102,8 +75,9 @@ Caso o usuário precise utilizar alguma outra solução, como ele já tem sua id
 ### Estratégia 
 A partir do escopo do trabalho a solução será uma prova de conceito, tendo conteúdo suficiente para o laboratório e entrega do trabalho. 
 
-Para estratégia de validação, o ecossistema será montado, tendo o desenvolvimento dos quatro serviços que representaram as soluções e compor tudo com o api gateway, implantando o ecossistema em uma infraestrutura simulando o ambiente e contexto proposto neste trabalho e como seria na vida real, validando a solução nesse ambiente, verificando resolução dos problemas propostos anteriormente.
+Para estratégia de validação, a plataforma será desenvolvida e colocada em produção em algum ambiente, nesse ambiente será simulado todo ciclo, desde a vinculação de um serviço, cidadão abrindo sua conta, até pagando por um serviço com e-money.
 
+Assim passando pelas principais features propostas, validando se o problema foi solucionado.
 
 ---
 
