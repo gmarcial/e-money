@@ -8,6 +8,7 @@ Ex: Pagar a passagem de ônibus.
 
 Para estar disponível na plataforma, é preciso se integrar ao hub.
 
+### Em desenvolvimento...
 
 ---
 
@@ -66,7 +67,10 @@ A conta da e-money pode ser encerrada a qualquer momento e tem características 
 
 Os dados e informações serão tratadas, armazenadas e manipuladas buscaram estar de acordo com a LGPD.
 
-<img alt="big picture" src="e-money-lvl1.png">
+<img alt="big picture" src="./architecture/e-money-lvl1.png">
+
+
+[Clique para ampliar e-Money para o nível 2](./architecture/e-money-lvl2.png)
 
 ---
 
