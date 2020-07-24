@@ -8,7 +8,7 @@ Ex: Pagar a passagem de ônibus.
 
 Para estar disponível na plataforma, é preciso se integrar ao hub.
 
-### Em desenvolvimento...
+## Em desenvolvimento...
 
 ---
 
@@ -19,7 +19,9 @@ O projeto tem como objetivo a sua utilização como trabalho de conclusão de cu
 O trabalho tem como essencia resolver um problema mesmo que ficticio utilizando tecnologia, aplicando um processo de engenharia de software a fim obter uma solução que venha a demonstrar valor no contexto onde foi aplicada e principalmente aprender.
 
 ### Agradecimentos
-Agradecimentos e referência ao orientador e mentor do trabalho [Gilvani Alves](https://www.linkedin.com/in/gilvani-alves-32754342/), especialista em redes de computadores e teleprocessamento e mestre em engenharia elétrica.
+Agradecimentos e referência pelas orientações e mentoria: 
+- [Gilvani Alves](https://www.linkedin.com/in/gilvani-alves-32754342/).
+- [Henrique Ribeiro](https://linkedin.com/in/henriqueprj/).
 
 ### Observação
 Por hora o projeto só vai contar com o desenvolvimento e entrega do backend, ficando aberto a possibilidade das demais partes como clientes mobile e web.
