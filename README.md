@@ -66,7 +66,7 @@ A conta da e-money pode ser encerrada a qualquer momento e tem características 
 
 Os dados e informações serão tratadas, armazenadas e manipuladas buscaram estar de acordo com a LGPD.
 
-<C4 lvl1>
+<img alt="big picture" src="e-money-lvl1.png">
 
 ---
 
