@@ -49,6 +49,7 @@ Ficou a responsabilidade da ShinerayLab projetar e desenvolver uma solução iss
 - Gerenciamento dos seus dados.
 - Recarga de créditos e-money.
 - Extrato das transações realizadas na conta.
+- Troco fácil
 - Comprovante das transações realizadas.
 - Pagamento de serviços dentro da plataforma.
 - Transferencia de credito entre contas da plataforma.
