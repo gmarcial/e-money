@@ -1,0 +1,17 @@
+---
+- name: Running the instance of postgres database with docker container
+  docker_container:
+    name: postgres
+    image: postgres:13-alpine
+    state: started
+    mounts:
+      - consistency: default
+        source: postgres
+        target: /var/lib/postgresql/data
+        type: volume
+    ports:
+        - "5432:5432"
+    env: 
+        POSTGRES_DB: "{{ postgres_db }}"
+        POSTGRES_USER: "{{ postgres_user }}"
+        POSTGRES_PASSWORD: "{{ postgres_password }}"
