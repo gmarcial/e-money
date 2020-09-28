@@ -1,0 +1,26 @@
+---
+- name: Create Directory
+  command: mkdir ../etc/custom-config
+
+- name: Move the config hcl to server
+  template:
+    src: ../templates/config.hcl
+    dest: ../etc/custom-config
+
+- name: Running the instance of vault with docker container
+  docker_container:
+    name: vault
+    command: server
+    image: vault:1.5.3
+    state: started
+    capabilities:
+      - IPC_LOCK
+    mounts:
+      - consistency: default
+        source: logs
+        target: /vault/logs
+        type: volume
+    ports:
+        - "8200:8200"
+    env: 
+        VAULT_LOCAL_CONFIG: '{"backend": {"file": {"path": "../etc/custom-config/config.hcl"}}, "default_lease_ttl": "168h", "max_lease_ttl": "720h"}'
