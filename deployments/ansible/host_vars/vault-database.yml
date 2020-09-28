@@ -1,0 +1,4 @@
+---
+postgres_db: vault
+postgres_user: vault
+postgres_password: password
