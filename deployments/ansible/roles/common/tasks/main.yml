@@ -1,0 +1,19 @@
+---
+- name: Create Directory
+  command: mkdir ../etc/custom-script
+
+- name: Move the script to server
+  template:
+    src: ../files/change-gateway-address.sh
+    dest: ../etc/custom-script
+
+- name: Move the script to server
+  template:
+    src: ../files/crontab.txt
+    dest: ../etc/custom-script
+
+- name: Scheduling in cronjob the execution in reboot
+  command: crontab ../etc/custom-script/crontab.txt
+
+- name: Schedule the execution of script to change the gateway address
+  command: at now + 2 minute -f ../etc/custom-script/change-gateway-address.sh
