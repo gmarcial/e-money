@@ -1,0 +1,6 @@
+@reboot sh /etc/custom-script/change-gateway-address.sh
+
+
+
+
+                                                

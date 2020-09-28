@@ -1,0 +1,47 @@
+---
+  - name: Configure docker module
+    hosts: vault, api-database, vault-database, gateway
+    remote_user: root
+  
+    roles:
+      - docker-module
+
+  - name: Configure gateway host
+    hosts: gateway
+    remote_user: root
+  
+    roles:
+      - gateway
+  
+  - name: Configure api host
+    hosts: api
+    remote_user: root
+  
+    roles:
+      - common
+  
+  - name: Configure vault host
+    hosts: vault
+    remote_user: root
+  
+    roles:
+      - vault
+      - common
+  
+  - name: Configure api database host
+    hosts: api-database
+    remote_user: root
+  
+    roles:
+      - databases
+      - common
+  
+  - name: Configure vault database host
+    hosts: vault-database
+    remote_user: root
+    vars_files:
+      - host_vars/vault-database.yml
+  
+    roles:
+      - vault-database
+      - common

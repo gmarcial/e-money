@@ -1,0 +1,29 @@
+---
+- name: Configure IP Forwarding
+  command: sysctl -w net.ipv4.ip_forward=1
+  
+- name: Persist configuration IP Forwarding
+  command: sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+
+- name: Install iptables
+  apt:
+    name: iptables
+    state: present
+
+- name: Configure NAT eth0
+  command: iptables -t nat -A POSTROUTING -s "{{ vpc_network_prefix }}" -o eth0 -j MASQUERADE
+
+- name: Configure NAT forwarding eth0
+  command: iptables --append FORWARD --in-interface eth0 -j ACCEPT
+
+- name: Configure NAT eth1
+  command: iptables -t nat -A POSTROUTING -s "{{ vpc_network_prefix }}" -o eth1 -j MASQUERADE
+
+- name: Configure NAT forwarding eth1
+  command: iptables --append FORWARD --in-interface eth1 -j ACCEPT
+
+- name: Install iptables persistent
+  command: sudo DEBIAN_FRONTEND=noninteractive apt install -y -q iptables-persistent
+
+- name: Save the current IPv4 rules
+  shell: iptables-save > /etc/iptables/rules.v4

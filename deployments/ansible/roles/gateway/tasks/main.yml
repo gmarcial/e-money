@@ -1,0 +1,3 @@
+---
+- include: configure_internet_gateway.yml
+- include: configure_api_gateway.yml

@@ -1,0 +1,14 @@
+ip_gateway: 
+
+postgres_db: emoney
+postgres_user: application
+postgres_password: password
+
+vpc_network_prefix: 
+ip_api: 
+
+
+connection_string: postgres://vault:password@10.116.16.6:5432/vault?sslmode=disable
+vault_ip: 
+
+ansible_python_interpreter: /usr/bin/python3
