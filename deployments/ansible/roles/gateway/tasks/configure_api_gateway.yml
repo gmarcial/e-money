@@ -1,0 +1,41 @@
+---
+- name: Create Directory
+  command: mkdir ../etc/custom-image
+
+- name: Move the Dockerfile to server
+  copy:
+    src: ../files/Dockerfile
+    dest: ../etc/custom-image
+
+- name: Move the nginx.conf to server
+  template:
+    src: ../templates/nginx.conf
+    dest: ../etc/custom-image
+
+- name: Move the application.conf to server
+  template:
+    src: ../templates/application.conf
+    dest: ../etc/custom-image
+
+- name: Build the nginx image
+  docker_image:
+    source: build
+    state: present
+    name: local/nginx
+    tag: latest
+    push: no
+    build:
+      path: ../etc/custom-image
+
+- name: Running the nginx service with docker container
+  docker_container:
+    name: gateway
+    image: "local/nginx:latest"
+    state: started
+    mounts:
+      - consistency: default
+        source: gateway
+        target: /etc/nginx
+        type: volume
+    ports:
+        - "443:443"
