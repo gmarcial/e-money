@@ -1,0 +1,54 @@
+---
+- include: ../databases/tasks/main.yml
+- include_vars: ../../host_vars/vault-database.yml
+
+- name: Install libpq-dev
+  apt:
+    name: libpq-dev
+    state: present
+
+- name: Install psycopg2 modules
+  pip:
+    name: psycopg2
+    state: present
+    executable: pip3
+
+- name: Create vault_kv_store table
+  postgresql_table:
+    db: vault
+    login_host: localhost
+    login_user: "{{ postgres_user }}"
+    login_password: "{{ postgres_password }}"
+    state: present
+    name: vault_kv_store
+    columns:
+        - parent_path TEXT COLLATE "C" NOT NULL
+        - path        TEXT COLLATE "C"
+        - key         TEXT COLLATE "C"
+        - value       BYTEA
+        - CONSTRAINT pkey PRIMARY KEY (path, key)
+
+- name: Create parent_path_idx index
+  postgresql_idx:
+    db: vault
+    login_host: localhost
+    login_user: "{{ postgres_user }}"
+    login_password: "{{ postgres_password }}"
+    table: vault_kv_store
+    columns: parent_path
+    name: parent_path_idx
+
+- name: Create vault_ha_locks table
+  postgresql_table:
+    db: vault
+    login_host: localhost
+    login_user: "{{ postgres_user }}"
+    login_password: "{{ postgres_password }}"
+    state: present
+    name: vault_ha_locks
+    columns:
+        - ha_key TEXT COLLATE "C" NOT NULL
+        - ha_identity TEXT COLLATE "C" NOT NULL
+        - ha_value TEXT COLLATE "C"
+        - valid_until TIMESTAMP WITH TIME ZONE NOT NULL
+        - CONSTRAINT ha_key PRIMARY KEY (ha_key)
