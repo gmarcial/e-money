@@ -13,3 +13,4 @@ Com isso em mente, a arquitetura está documentada e organizada conforme os quat
 
 - [System Context](./system_context)
 - [Container](./container)
+- [Component](./component)
