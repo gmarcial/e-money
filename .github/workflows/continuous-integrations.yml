@@ -1,0 +1,24 @@
+name: Continuoues integrations
+on: [push, pull_request]
+jobs:
+    integration:
+        name: Integration
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2.3.3
+            - uses: actions/setup-go@v2.1.2
+              with:
+                go-version: '1.14.3'
+            - name: Build
+              run: |
+                go get -v -d ./...
+                CGO_ENABLED=0 GOOS=linux go build -i -v -a -o emoney ./cmd/test/test.go
+            - name: Code Analysis
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            - name: Unit tests
+              run: go test -v -run "Unit" ./...
+            - name: Integration tests
+              run: go test -v -run "Integration" ./...
