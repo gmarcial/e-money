@@ -11,6 +11,7 @@ Para um conhecimento mais aprofundado, acesso o site oficial do [c4 model](https
 
 Com isso em mente, a arquitetura está documentada e organizada conforme os quatros modelos principais, contendo uma imagem para visualização e o arquivo do projeto para atualizações, tendo o diagrama sido feito no [diagrams](http://diagrams.net/), antigo draw.io, com uma extensão para c4 models, encontrada no github como [tobiashochguertel/c4-draw](https://github.com/tobiashochguertel/c4-draw.io).
 
+- [Quality Attributes](./quality_attributes.md)
 - [System Context](./system_context)
 - [Container](./container)
 - [Component](./component)
